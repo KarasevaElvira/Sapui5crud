@@ -1,0 +1,51 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:t="sap.ui.table"
+
+        controllerName="sample.app.controller.App"
+        displayBlock="true">
+    <Shell>
+        <Page title="{i18n>Title}" backgroundDesign="Solid">
+            <content>
+                <Button text="Добавить" press="createDialog" />
+                <t:Table
+                        id="otable"
+                        rows="{/students}"
+                        selectionMode="Single"
+                        ariaLabelledBy="title"
+                        visibleRowCount="{path: '/students', formatter: '.countFormatter'}"
+                        rowActionCount="2">
+                    <t:toolbar>
+                        <Toolbar>
+                            <Title id="title" text="Students"/>
+                        </Toolbar>
+                    </t:toolbar>
+                    <t:columns>
+                        <t:Column>
+                            <Label text="Name"/>
+                            <t:template>
+                                <Text text="{name}"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column>
+                            <Label text="Birthday"/>
+                            <t:template>
+                                <Text type = "Date" text="{birthday}" />
+                            </t:template>
+                        </t:Column>
+
+                    </t:columns>
+                    <t:rowActionTemplate>
+                        <t:RowAction>
+                            <t:items>
+                                <t:RowActionItem text="Edit" icon="sap-icon://edit" press="changeDialog"/>
+                                <t:RowActionItem text="Remove" icon="sap-icon://decline" press="delete"/>
+                            </t:items>
+                        </t:RowAction>
+                    </t:rowActionTemplate>
+                </t:Table>
+            </content>
+        </Page>
+    </Shell>
+</mvc:View>

@@ -1,0 +1,42 @@
+{
+	"sap.app": {
+		"id": "sample.app",
+		"type": "application"
+	},
+
+	"sap.ui": {
+		"icons" : {
+			"icon": "sap-icon://accept"
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.suite.ui.commons": {}
+			}
+		},
+		"rootView": {
+			"viewName": "sample.app.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sample.app.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/styles.css"
+				}
+			]
+		}
+	}
+}

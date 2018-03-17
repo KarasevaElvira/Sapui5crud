@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core" >
+<Dialog
+        id="changeDialog"
+        title="{/Text}">
+        <Label text = "Имя" design = "Bold"/>
+        <Input type = "Text" value="{/name}"/>
+        <Label text = "Дата рождения" design = "Bold"/>
+        <Input type = "DateTime" value="{/birthday}"/>
+        <Button text="Изменить" press="changeFunction" />
+        <Button text="Закрыть" press="onCloseDialog" />
+</Dialog>
+</core:FragmentDefinition>
